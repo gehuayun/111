@@ -9,21 +9,19 @@ from bs4 import BeautifulSoup
 
 HEADERS = {
     'X-Requested-With': 'XMLHttpRequest',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 '
-                  '(KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+    'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
     'Referer': 'http://www.mzitu.com'
 }
 
 # 下载图片保存路径
-DIR_PATH = r"D:\mzitu"
+DIR_PATH = r"D:\工作\下载\测试2"
 
 
 def get_urls():
     """
     获取 mzitu 网站下所有套图的 url
     """
-    page_urls = ['http://www.mzitu.com/page/{cnt}'.format(cnt=cnt)
-                 for cnt in range(1, 193)]
+    page_urls = ['http://www.mzitu.com/page/{cnt}'.format(cnt=cnt)for cnt in range(1, 193)]
     print("Please wait for second ...")
     img_urls = []
     for page_url in page_urls:
